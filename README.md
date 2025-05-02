@@ -42,7 +42,7 @@ Para aprovechar al máximo este tema, recomendamos crear las siguientes páginas
 2. Visión - Utilizando la plantilla "Visión"
 3. Juego - Utilizando la plantilla "Juego" (¡Importante para incluir el minijuego!)
 
-https://i.imgur.com/NuN10hU.png
+![image](https://i.imgur.com/NuN10hU.png)
 
 ## == Frequently Asked Questions ==
 
