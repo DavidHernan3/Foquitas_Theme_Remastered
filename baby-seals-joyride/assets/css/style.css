@@ -1,0 +1,817 @@
+
+/**
+ * @DavidHernan3 - Equipo Los Boquerones
+ * 
+ * Main CSS file for Baby Seals Joyride Theme
+ */
+
+/* Custom elements */
+foki-main, foki-section, foki-header, foki-footer, foki-page {
+    display: block;
+    width: 100%;
+}
+
+/* Root variables */
+:root {
+    --seal-100: #EBF7FF;
+    --seal-200: #D3E4FD;
+    --seal-300: #A3D9FF;
+    --seal-400: #33C3F0;
+    --seal-500: #2EA7D1;
+    --maraca-300: #7E69AB;
+    --maraca-400: #5D4A8A;
+    --transition-default: all 0.3s ease;
+}
+
+/* Typography */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Container layouts */
+.foki-header__container,
+.foki-footer__container,
+.foki-hero__container,
+.foki-features__container,
+.foki-cta__container,
+.foki-page__container,
+.foki-page-header__container,
+.foki-history__container,
+.foki-vision__container,
+.foki-game-header__container,
+.foki-game-content__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+.foki-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 15px 0;
+    transition: var(--transition-default);
+    background-color: transparent;
+}
+
+.foki-header--scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.foki-header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.foki-header__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.foki-header__logo-emoji {
+    font-size: 2rem;
+    margin-right: 8px;
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+.foki-header__logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--seal-400), var(--maraca-300));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Navigation */
+.foki-nav {
+    display: flex;
+    align-items: center;
+}
+
+.foki-nav__desktop {
+    display: flex;
+    align-items: center;
+}
+
+.foki-nav__link {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.foki-nav__link:hover {
+    color: var(--seal-400);
+}
+
+.foki-nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--seal-400);
+    transition: var(--transition-default);
+}
+
+.foki-nav__link:hover::after {
+    width: 100%;
+}
+
+.foki-nav__mobile {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.foki-nav__mobile-link {
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    border-bottom: 1px solid var(--seal-200);
+    display: block;
+}
+
+.foki-nav__mobile-link:hover {
+    color: var(--seal-400);
+}
+
+.foki-nav__mobile-toggle {
+    display: none;
+    background: none;
+    border: 2px solid var(--seal-300);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #333;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.foki-nav__mobile--active {
+    display: flex;
+}
+
+/* Button styles */
+.foki-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.foki-button--primary {
+    background: linear-gradient(to right, var(--seal-400), var(--maraca-300));
+    color: white;
+}
+
+.foki-button--primary:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+.foki-button--outline {
+    border: 2px solid var(--seal-300);
+    color: var(--seal-500);
+    background: transparent;
+}
+
+.foki-button--outline:hover {
+    background-color: var(--seal-100);
+}
+
+.foki-button--large {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+}
+
+.foki-button--play {
+    animation: pulse 2s infinite;
+}
+
+.foki-button--play-mobile {
+    margin-top: 20px;
+    animation: pulse 2s infinite;
+}
+
+/* Main content */
+.foki-main {
+    padding-top: 80px;
+    min-height: calc(100vh - 200px);
+}
+
+/* Hero section */
+.foki-hero {
+    padding: 60px 0 80px;
+    background: linear-gradient(to bottom, #ffffff, var(--seal-200));
+    position: relative;
+    overflow: hidden;
+}
+
+.foki-hero__container {
+    text-align: center;
+}
+
+.foki-hero__title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.foki-hero__subtitle {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--seal-400);
+    margin-bottom: 10px;
+}
+
+.foki-hero__description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.foki-hero__buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.foki-hero__image {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.foki-hero__emoji {
+    font-size: 8rem;
+    display: inline-block;
+    transform: rotate(15deg);
+    animation: floating 6s infinite;
+}
+
+/* Features section */
+.foki-features {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.foki-section__title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.foki-section__title span {
+    color: var(--seal-400);
+}
+
+.foki-features__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+}
+
+.foki-feature {
+    background-color: var(--seal-100);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.foki-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.foki-feature__icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.foki-feature__title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.foki-feature__description {
+    color: #666;
+}
+
+/* CTA Section */
+.foki-cta {
+    padding: 60px 0;
+    background: linear-gradient(to bottom, var(--seal-100), #ffffff);
+    text-align: center;
+}
+
+.foki-cta__title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.foki-cta__title span {
+    color: var(--seal-400);
+}
+
+.foki-cta__description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #666;
+}
+
+/* Footer */
+.foki-footer {
+    background-color: var(--seal-100);
+    padding: 60px 0 30px;
+}
+
+.foki-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.foki-footer__col {
+    margin-bottom: 20px;
+}
+
+.foki-footer__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.foki-footer__logo-emoji {
+    font-size: 1.8rem;
+    margin-right: 8px;
+}
+
+.foki-footer__logo-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--seal-400), var(--maraca-300));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.foki-footer__description {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.foki-footer__heading {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--seal-500);
+}
+
+.foki-footer__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.foki-footer__link {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.foki-footer__link:hover {
+    color: var(--seal-400);
+}
+
+.foki-footer__contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.foki-footer__contact li {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.foki-footer__contact li span {
+    font-weight: 600;
+    margin-right: 5px;
+    color: #333;
+}
+
+.foki-footer__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--seal-200);
+}
+
+.foki-footer__copyright {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.foki-footer__credit {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.foki-footer__credit strong {
+    color: #333;
+}
+
+/* Page template */
+.foki-page {
+    padding: 30px 0;
+}
+
+.foki-page__title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.foki-page__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Page Header */
+.foki-page-header {
+    padding: 60px 0 40px;
+    background: linear-gradient(to bottom, #ffffff, var(--seal-100));
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.foki-page-header__title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.foki-page-header__description {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #666;
+}
+
+/* History page */
+.foki-history__container {
+    max-width: 800px;
+}
+
+.foki-history__timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.foki-history__timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 9px;
+    height: 100%;
+    width: 2px;
+    background-color: var(--seal-300);
+}
+
+.foki-history__item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.foki-history__year {
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--seal-400);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.foki-history__year::before {
+    content: attr(data-year);
+    position: absolute;
+    left: 30px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: var(--seal-500);
+}
+
+.foki-history__content {
+    padding-left: 15px;
+}
+
+.foki-history__title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.foki-history__text {
+    color: #666;
+}
+
+/* Vision Page */
+.foki-vision__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.foki-vision__subtitle {
+    font-size: 1.8rem;
+    color: var(--seal-500);
+    margin: 40px 0 20px;
+}
+
+.foki-vision__text {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.foki-vision__image {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.foki-vision__emoji {
+    font-size: 6rem;
+    display: inline-block;
+    animation: floating 6s infinite;
+}
+
+.foki-vision__values {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.foki-vision__values li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.foki-vision__values span {
+    font-size: 2rem;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.foki-vision__values h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.foki-vision__values p {
+    margin: 0;
+    color: #666;
+}
+
+/* Game page */
+.foki-game-header {
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.foki-game-header__title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, var(--seal-400), var(--maraca-300));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.foki-game-header__description {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #666;
+}
+
+.foki-game {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.foki-game__canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 4px solid var(--seal-400);
+    margin-bottom: 20px;
+    background-color: var(--seal-200);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.foki-game__controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.foki-game__instructions {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.foki-game-instructions {
+    max-width: 700px;
+    margin: 40px auto 0;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.foki-game-instructions__title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--seal-500);
+}
+
+.foki-game-instructions__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.foki-game-instructions__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.foki-game-instructions__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.foki-game-instructions__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0) rotate(15deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(15deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(51, 195, 240, 0.4);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(51, 195, 240, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(51, 195, 240, 0);
+    }
+}
+
+/* Media queries */
+@media (min-width: 576px) {
+    .foki-game__controls {
+        flex-direction: row;
+    }
+    
+    .foki-game-instructions__buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .foki-hero__buttons {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .foki-hero__title {
+        font-size: 3.5rem;
+    }
+    
+    .foki-history__container {
+        padding-left: 50px;
+    }
+    
+    .foki-features__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .foki-footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .foki-footer__bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .foki-footer__copyright {
+        margin-bottom: 0;
+        text-align: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .foki-nav__mobile-toggle {
+        display: none;
+    }
+    
+    .foki-nav__desktop {
+        display: flex;
+    }
+    
+    .foki-features__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .foki-footer__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .foki-hero__emoji {
+        font-size: 12rem;
+    }
+}
