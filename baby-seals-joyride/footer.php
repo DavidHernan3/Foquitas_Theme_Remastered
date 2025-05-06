@@ -1,7 +1,7 @@
 
 <?php
 /**
- * @DavidHernan3 - Equipo Los Boquerones
+ *  Equipo Los Boquerones
  * 
  * The template for displaying the footer
  *
