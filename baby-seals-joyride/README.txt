@@ -1,7 +1,7 @@
 
 === Baby Seals Joyride ===
 Theme Name: Baby Seals Joyride
-Author: @DavidHernan3 - Equipo Los Boquerones
+Author: Equipo Los Boquerones
 Version: 1.0.0
 Requires at least: WordPress 6.0
 Tested up to: WordPress 6.4
