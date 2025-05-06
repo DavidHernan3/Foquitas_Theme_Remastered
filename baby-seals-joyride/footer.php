@@ -57,7 +57,7 @@
                 </p>
                 <div class="foki-footer__credit">
                     <span><?php echo esc_html__('Desarrollado por', 'baby-seals'); ?></span>
-                    <strong>@DavidHernan3 - Equipo Los Boquerones</strong>
+                    <strong>Equipo Los Boquerones</strong>
                 </div>
             </div>
         </div>
