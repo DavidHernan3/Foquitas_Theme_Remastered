@@ -73,3 +73,15 @@ Primera versión estable del tema Baby Seals Joyride.
 
 ### = 1.0.2 =
 Testeo de importación a entorno WordPress.
+
+### = 1.0.1 =
+Primera versión estable del tema Baby Seals Joyride.
+
+### = 1.0.2 =
+Testeo de importación a entorno WordPress.
+
+### = 1.0.3 =
+Arreglos de formatos y sesiones de cache.
+
+### = 1.0.4 =
+Arreglos de formateo.
