@@ -514,14 +514,14 @@ foki-footer {
     background-color: #D3E4FD;
 }
 
-.foki-game__controls {
+.foki-game__control {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-bottom: 20px;
 }
 
-.foki-game__instructions {
+.foki-game__instruction {
     color: #666;
     font-style: italic;
 }

@@ -28,17 +28,18 @@ function foki_head() {
  * Custom function to replace wp_footer
  */
 function foki_footer() {
+    wp_frage
     wp_footer();
 }
 
 /**
- * Sets up theme defaults and registers support for various WordPress features.
+ * Sets up theme default and registers support for various WordPress features.
  */
 function baby_seals_setup() {
     // Load text domain
     load_theme_textdomain('baby-seals', BABY_SEALS_THEME_DIR . '/languages');
 
-    // Add default posts and comments RSS feed links to head
+    // Add default posts and comments RSS feed link to head
     add_theme_support('automatic-feed-links');
 
     // Let WordPress manage the document title
@@ -70,7 +71,7 @@ function baby_seals_setup() {
     // Add support for Block Styles
     add_theme_support('wp-block-styles');
 
-    // Add support for full and wide align images
+    // Add support for full and wide align image
     add_theme_support('align-wide');
 
     // Add support for responsive embeds
@@ -79,10 +80,10 @@ function baby_seals_setup() {
 add_action('after_setup_theme', 'baby_seals_setup');
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue script and style.
  */
 function baby_seals_scripts() {
-    // Enqueue main stylesheet
+    // Enqueue main style sheet
     wp_enqueue_style('baby-seals-style', get_stylesheet_uri(), array(), BABY_SEALS_VERSION);
     
     // Enqueue Google Fonts
@@ -91,14 +92,14 @@ function baby_seals_scripts() {
     // Enqueue custom CSS file
     wp_enqueue_style('baby-seals-custom', BABY_SEALS_THEME_URI . '/assets/css/style.css', array(), BABY_SEALS_VERSION);
     
-    // Enqueue theme scripts
+    // Enqueue theme script
     wp_enqueue_script('baby-seals-main', BABY_SEALS_THEME_URI . '/assets/js/main.js', array('jquery'), BABY_SEALS_VERSION, true);
     
-    // Game scripts only loaded on game page template
+    // Game script only loaded on game page template
     if (is_page_template('page-game.php')) {
         wp_enqueue_script('baby-seals-game', BABY_SEALS_THEME_URI . '/assets/js/game.js', array('jquery'), BABY_SEALS_VERSION, true);
         
-        // Localize script for translations and variables
+        // Localize script for translation and variables
         wp_localize_script('baby-seals-game', 'foki_game_data', array(
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('foki_game_nonce'),
@@ -123,7 +124,7 @@ function baby_seals_widgets_init() {
     register_sidebar(array(
         'name'          => esc_html__('Sidebar', 'baby-seals'),
         'id'            => 'sidebar-1',
-        'description'   => esc_html__('Add widgets here.', 'baby-seals'),
+        'description'   => esc_html__('Add widget here.', 'baby-seals'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
@@ -133,7 +134,7 @@ function baby_seals_widgets_init() {
     register_sidebar(array(
         'name'          => esc_html__('Footer', 'baby-seals'),
         'id'            => 'footer',
-        'description'   => esc_html__('Add footer widgets here.', 'baby-seals'),
+        'description'   => esc_html__('Add footer widget here.', 'baby-seals'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
@@ -164,7 +165,7 @@ class Foki_Footer_Menu_Walker extends Walker_Nav_Menu {
 }
 
 /**
- * Add Baby Seal Jump game shortcode
+ * Add baby seal jump game shortcode
  */
 function baby_seals_game_shortcode($atts) {
     ob_start();
@@ -172,12 +173,12 @@ function baby_seals_game_shortcode($atts) {
     <div class="foki-game">
         <canvas id="baby-seal-canvas" width="800" height="400" class="foki-game__canvas"></canvas>
         
-        <div class="foki-game__controls">
+        <div class="foki-game__control">
             <button id="start-game-btn" class="foki-button foki-button--primary"><?php echo esc_html__('Iniciar juego', 'baby-seals'); ?></button>
             <button id="jump-btn" class="foki-button foki-button--secondary" disabled><?php echo esc_html__('Saltar', 'baby-seals'); ?></button>
         </div>
         
-        <div class="foki-game__instructions">
+        <div class="foki-game__instruction">
             <p><?php echo esc_html__('Utiliza la barra espaciadora o el botón Saltar para evitar obstáculos.', 'baby-seals'); ?></p>
         </div>
     </div>
