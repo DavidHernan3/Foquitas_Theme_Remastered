@@ -28,7 +28,7 @@ function foki_head() {
  * Custom function to replace wp_footer
  */
 function foki_footer() {
-    wp_frage
+    wp_frage();
     wp_footer();
 }
 
