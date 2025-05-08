@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Baby Seals Joyride functions and definitions
